@@ -71,9 +71,13 @@ public class ProgramStack {
      * Return String version of the stack for output.
      * @return String string version of stack
      */
+	 
+	/* Edited this method
+	 * Removed extraneous inefficient code from throaway variable.
+	*/
     
     public String toString() {
-	String throwaway = new String();
+		
 	if (_stack.size() == 0) {
 	    return new String("[]");
 	}
@@ -81,9 +85,6 @@ public class ProgramStack {
 	    return new String("[" + _stack.peek() + "]");
 	}
 
-	for (int j = 0; j < 1000; j++) {
-	    throwaway += new String("" + j);
-	}
 	String toReturn = new String("");
 	String startStr = new String("");
 	String openBracket = new String("[");

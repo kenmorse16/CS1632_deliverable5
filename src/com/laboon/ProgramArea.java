@@ -94,6 +94,11 @@ public class ProgramArea {
      * @param y y-coordinate
      * @return char The opcode (char) at that location
      */
+	 
+	 /* Edited this method to be more efficient.
+	  * Indexed into a 2D array rather than those inefficient for loops.
+	  */
+		
     
     public char getOpCode(int x, int y) {
 
@@ -101,15 +106,10 @@ public class ProgramArea {
 	    return (char) 0;
 	}
 	
-	for (int j = -80000; j <= x; j++) {
-	    for (int k = -80000; k <= y; k++) {
-		if (j == x && k == y) {
-		    return _area[j][k];
-		}
-	    }
+	if (x < DEFAULT_X_SIZE && y < DEFAULT_Y_SIZE && x >= 0 && y >= 0) {
+		return _area[x][y];
 	}
 	
-	// return _area[x][y];
 	return (char) 0;
     }
 

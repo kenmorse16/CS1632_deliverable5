@@ -173,4 +173,33 @@ public class ProgramExecutorTest {
 	assertEquals(Direction.LEFT, _e._d);
     }
 
+	// tests that after pushing 6, modulo places 4 on the stack
+	// a = 6
+	// b = 4
+	@Test
+	public void testModuloLess() {
+		_e._ps.push(6);
+		_e.modulo();
+		assertEquals(4,_e._ps.peek());
+	}
+	
+	// tests that after pushing 4, modulo places 0 on the stack
+	// a = 4
+	// b = 4
+	@Test
+	public void testModuloEquals() {
+		_e._ps.push(4);
+		_e.modulo();
+		assertEquals(0,_e._ps.peek());
+	}
+	
+	// tests that after pushing 3, modulo places 1 on the stack
+	// a = 3
+	// b = 4
+	@Test
+	public void testModuloGreater() {
+		_e._ps.push(3);
+		_e.modulo();
+		assertEquals(1,_e._ps.peek());
+	}
 }

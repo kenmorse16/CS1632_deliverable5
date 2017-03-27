@@ -163,6 +163,33 @@ public class ProgramAreaTest {
 	assertTrue(stringRep.substring(0, 10).equals(simpleProgram));
 
     }
+	
+	//Tests that valid x and y values returns ' '
+	// x = 1
+	// y = 1
+	@Test
+	public void TestGetOpCodeValid() {
+		ProgramArea test = new ProgramArea();
+		assertEquals(test.getOpCode(1,1),' ');
+	}
+	
+	//Tests that a negative value returns 0 
+	// x = -1
+	// y = 1
+	@Test
+	public void TestGetOpCodeNegative() {
+		ProgramArea test = new ProgramArea();
+		assertEquals(test.getOpCode(-1,1), (char)0);
+	}
+	
+	//Tests that a number about 100 value returns 0 
+	// x = 101
+	// y = 1
+	@Test
+	public void TestGetOpCodeAbove100() {
+		ProgramArea test = new ProgramArea();
+		assertEquals(test.getOpCode(101,1), (char)0);
+	}
 
     
 }

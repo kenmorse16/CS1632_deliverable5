@@ -142,4 +142,32 @@ public class ProgramStackTest {
 	assertTrue(stack.toString().equals("[1, 2, 3]"));
     }
     
+	// Tests that toString returns [] with no stack
+	@Test
+	public void testToStringNull() {
+		ProgramStack stack = new ProgramStack();
+		assertEquals("[]", stack.toString());
+	}
+	
+	// Tests that toString returns [L] with only L on the stack
+	@Test
+	public void testToStringL() {
+		ProgramStack stack = new ProgramStack();
+		stack.push('L');
+		assertEquals("[76]", stack.toString());
+	}
+	
+	// Test that toString returns each element in the stack separated by commas
+	//String used is LABOON
+	@Test
+	public void testToStringLABOON() {
+		ProgramStack stack = new ProgramStack();
+		stack.push('L');
+		stack.push('A');
+		stack.push('B');
+		stack.push('O');
+		stack.push('O');
+		stack.push('N');
+		assertEquals("[76, 65, 66, 79, 79, 78]", stack.toString());
+	}
 }

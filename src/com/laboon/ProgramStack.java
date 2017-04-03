@@ -1,6 +1,8 @@
 package com.laboon;
 
+import java.lang.*;
 import java.util.*;
+
 
 /**
  * The program stack.
@@ -32,7 +34,7 @@ public class ProgramStack {
      */
     
     public void push(int val) {
-	_stack.push(new Integer(val));
+	_stack.push(val);
     }
 
     /**
@@ -79,23 +81,23 @@ public class ProgramStack {
     public String toString() {
 		
 	if (_stack.size() == 0) {
-	    return new String("[]");
+	    return "[]";
 	}
 	if (_stack.size() == 1) {
-	    return new String("[" + _stack.peek() + "]");
+	    return "[" + _stack.peek() + "]";
 	}
-
-	String toReturn = new String("");
-	String startStr = new String("");
-	String openBracket = new String("[");
-	toReturn = startStr + openBracket;
+	String toReturn = "";
+	String startStr = "";
+	String openBracket = "[";
+	
+	StringBuilder sb = new StringBuilder(startStr + openBracket);
 	for (Integer i: _stack) {
 	    int intI = i.intValue();
-	    String x = new String("" + intI + ", ");
-	    toReturn += x;
+	    sb.append("" + intI + ", ");
 	}
-	toReturn = toReturn.substring(0, toReturn.length() - 2);
-	toReturn += new String("]");
+
+	toReturn = sb.substring(0, sb.length() - 2);
+	toReturn += "]";
 	return toReturn;
 
     }

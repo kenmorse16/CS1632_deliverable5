@@ -10,8 +10,8 @@ public class ProgramArea {
     // Default size of board is 100x100
     // Note that we currently do not have the option to extend it
 
-    private final int DEFAULT_X_SIZE = 100;
-    private final int DEFAULT_Y_SIZE = 100;
+    private static final int DEFAULT_X_SIZE = 100;
+    private static final int DEFAULT_Y_SIZE = 100;
 
     // The actual char array holding the program.
     // Converted from a string.
@@ -105,7 +105,7 @@ public class ProgramArea {
 	    return (char) 0;
 	}
 	
-	if (x < DEFAULT_X_SIZE && y < DEFAULT_Y_SIZE && x >= 0 && y >= 0) {
+	if (x < DEFAULT_X_SIZE && y < DEFAULT_Y_SIZE) {
 		return _area[x][y];
 	}
 	
@@ -120,11 +120,7 @@ public class ProgramArea {
      */
     
     public void setOpCode(int x, int y, char v) {
-	if (x >= _xSize || x < 0 || y >= _ySize || y < 0) {
-	    // Ignore
-	} else {
 	    _area[x][y] = v;
-	}
     }
    
     /**

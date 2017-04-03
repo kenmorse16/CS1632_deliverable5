@@ -53,7 +53,7 @@ public class ProgramExecutor {
     // Static because we don't really need a new RNG for each program
     // Also, no worries about thread safety since program execution is
     // single-threaded
-    public static Random _r = new Random();
+    public static final  Random _r = new Random();
 
     // A reference to the MainPanel, which will allow us to update
     // the stack and output areas.
@@ -509,7 +509,7 @@ public class ProgramExecutor {
     
     public void pop() {
 	shouldUpdateStack();
-	int a = _ps.pop();
+	_ps.pop();
     }
     
     /**

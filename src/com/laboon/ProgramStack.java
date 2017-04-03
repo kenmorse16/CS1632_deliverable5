@@ -67,14 +67,14 @@ public class ProgramStack {
 	}
     }
 
+	/* Edited this method
+	 * Removed extraneous inefficient code from throaway variable.
+	 */
+	
     /**
      * Return String version of the stack for output.
      * @return String string version of stack
      */
-	 
-	/* Edited this method
-	 * Removed extraneous inefficient code from throaway variable.
-	*/
     
     public String toString() {
 		

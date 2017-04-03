@@ -87,18 +87,17 @@ public class ProgramArea {
 	fillUpSpaces();
     }
 
+	/* Edited this method to be more efficient.
+	 * Indexed into a 2D array rather than those inefficient for loops.
+	 */
+	
     /**
      * Get the opcode from a particular place in the program area.
      * If opcode is not in program space, return null char (ASCII 0).
      * @param x x-coordinate
      * @param y y-coordinate
      * @return char The opcode (char) at that location
-     */
-	 
-	 /* Edited this method to be more efficient.
-	  * Indexed into a 2D array rather than those inefficient for loops.
-	  */
-		
+     */	
     
     public char getOpCode(int x, int y) {
 
@@ -118,7 +117,6 @@ public class ProgramArea {
      * If out of bounds, do nothing.
      * @param x x-coordinate
      * @param y y-coordinate
-     * @return char The opcode (char) to set at that location
      */
     
     public void setOpCode(int x, int y, char v) {

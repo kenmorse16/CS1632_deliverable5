@@ -1,16 +1,14 @@
 package com.laboon;
 
-import java.util.*;
-
 import static org.junit.Assert.*;
 
 import org.junit.*;
 
+import java.util.*;
+
 /**
  * Test methods in ProgramStack class
  */
-
-
 
 public class ProgramStackTest {
 
@@ -24,6 +22,7 @@ public class ProgramStackTest {
 	int topVal = stack.pop();
 	assertEquals(testVal, topVal);
     }
+	
     // Test that pushing a negative integer (-1) will result in the next
     // pop being that value.
     @Test

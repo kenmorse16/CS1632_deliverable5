@@ -168,7 +168,7 @@ public class ProgramAreaTest {
 	// x = 1
 	// y = 1
 	@Test
-	public void TestGetOpCodeValid() {
+	public void testGetOpCodeValid() {
 		ProgramArea test = new ProgramArea();
 		assertEquals(test.getOpCode(1,1),' ');
 	}
@@ -177,7 +177,7 @@ public class ProgramAreaTest {
 	// x = -1
 	// y = 1
 	@Test
-	public void TestGetOpCodeNegative() {
+	public void testGetOpCodeNegative() {
 		ProgramArea test = new ProgramArea();
 		assertEquals(test.getOpCode(-1,1), (char)0);
 	}
@@ -186,7 +186,7 @@ public class ProgramAreaTest {
 	// x = 101
 	// y = 1
 	@Test
-	public void TestGetOpCodeAbove100() {
+	public void testGetOpCodeAbove100() {
 		ProgramArea test = new ProgramArea();
 		assertEquals(test.getOpCode(101,1), (char)0);
 	}

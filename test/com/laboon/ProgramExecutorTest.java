@@ -6,7 +6,6 @@ import org.junit.*;
 
 /**
  * Test methods in ProgramExecutor class
- * 
  * TODO: These methods do not use stubs/mocks/doubles.  This would
  * be a good refactoring effort in the future!
  */
@@ -19,9 +18,11 @@ public class ProgramExecutorTest {
     
     public ProgramExecutor _e = null;
 
-    // Create simple executor before each test
-    // Consists of a program "123++@" and a stack that already has
-    // the values [2, 3, 4] (4 being the "top" of the stack)
+    /** 
+	 * Create simple executor before each test
+     * Consists of a program "123++@" and a stack that already has
+     * the values [2, 3, 4] (4 being the "top" of the stack)
+	 */
     @Before
     public void setup() {
     	ProgramStack ps = new ProgramStack();
@@ -144,29 +145,40 @@ public class ProgramExecutorTest {
 	_e.greaterThan();
 	assertEquals(0, _e._ps.peek());
     }
-
-    
-    //  *  _   Horizontal IF: pop a value; set direction to right if value=0, set to left otherwise
-    // Check going right if value is 0
-    
+  
+    /**
+	 * _ Horizontal IF: pop a value
+	 * set direction to right if value=0
+	 * set to left otherwise
+     * Check going right if value is 0
+     */
+	@Test 
     public void testHorizontalIfZero() {
     	_e._ps.push(0);
 	_e.horizontalIf();
 	assertEquals(Direction.RIGHT, _e._d);
     }
 
-    //  *  _   Horizontal IF: pop a value; set direction to right if value=0, set to left otherwise
-    // Check going left if value is positive
-    
+    /**
+	 * _ Horizontal IF: pop a value
+	 * set direction to right if value=0
+	 * set to left otherwise
+     * Check going left if value is positive
+     */
+	@Test 
     public void testHorizontalIfPositive() {
     	_e._ps.push(19);
 	_e.horizontalIf();
 	assertEquals(Direction.LEFT, _e._d);
     }
 
-    //  *  _   Horizontal IF: pop a value; set direction to right if value=0, set to left otherwise
-    // Check going left if value is positive
-    
+	/**
+	 * _ Horizontal IF: pop a value
+	 * set direction to right if value=0
+	 * set to left otherwise
+     * Check going left if value is negative
+     */
+	@Test
     public void testHorizontalIfNegative() {
     	_e._ps.push(-3);
 	_e.horizontalIf();

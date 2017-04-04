@@ -1,11 +1,15 @@
 package com.laboon;
 
-import java.util.ArrayList;
-
 import org.junit.runner.*;
 import org.junit.runner.notification.*;
 
+import java.util.ArrayList;
+
 public class TestRunner {
+	
+	/**
+	 * Runs all the test methods from the test classes
+	 */
     public static void main(String[] args) {
 
 	ArrayList<Class> classesToTest = new ArrayList<Class>();
